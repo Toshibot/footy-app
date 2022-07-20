@@ -7,13 +7,13 @@
       <span class="fixture-date-time">{{time}}</span>
     </div>
     <FixtureTeam 
-      kitsource="/img/teams/cats-home.png"
+      kitsource="./img/teams/cats-home.png"
       teamname="Geelong"
       totalscore="-"
     />
     <div class="fixture-vs">vs</div>
     <FixtureTeam 
-      kitsource="/img/teams/blues-home.png"
+      kitsource="./img/teams/blues-home.png"
       teamname="Carlton"
       totalscore="-"
     />
