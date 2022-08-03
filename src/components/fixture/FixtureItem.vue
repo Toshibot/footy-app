@@ -46,6 +46,18 @@ export default {
         required: false
       }
     },
-    components: { FixtureTeam }
+    components: { FixtureTeam },
+    methods: {
+      homeTeamKit(teamkey: any) {
+        return teamkey.kit.home
+      },
+      awayTeamKit(hometeamkey: any, awayteamkey: any) {
+        if (awayteamkey.kit.clash.teams.includes(hometeamkey)) {
+          return awayteamkey.kit.clash.kit
+        } else {
+          return awayteamkey.kit.away
+        }
+      }
+    }
 }
 </script>
