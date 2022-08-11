@@ -45,17 +45,24 @@ export default {
     font-size: 24px;
     text-align: center;
     padding-bottom: 12.5px;
+
+    @media screen and (max-width: $break-s) {
+      margin-top: 25px;
+    }
   }
   .fixture-item-container {
-    display: inline-block;
-    width: 32%;
     margin-bottom: 17px;
-    margin-right: 1.5%;
 
-    &:nth-child(4),
-    &:nth-child(7),
-    &:nth-child(10) {
-      margin-right: 0;
+    @media screen and (min-width: $break-m) {
+      display: inline-block;
+      width: 32%;
+      margin-right: 1.5%;
+
+      &:nth-child(4),
+      &:nth-child(7),
+      &:nth-child(10) {
+        margin-right: 0;
+      }
     }
   }
 </style>

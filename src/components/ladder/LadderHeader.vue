@@ -52,6 +52,11 @@
       max-width: 33.333%;
       text-align: left;
 
+      @media screen and (max-width: $break-s) {
+        flex-basis: 58.333%;
+        max-width: 58.333%;
+      }
+
       img {
         width: 41px;
         height: 41px;
@@ -81,6 +86,14 @@
       flex-basis: 16.667%;
       max-width: 16.667%;
       text-align: center;
+    }
+
+    &-wins,
+    &-losses,
+    &-draws {
+      @media screen and (max-width: $break-s) {
+        display: none !important;
+      }
     }
   }
 </style>
