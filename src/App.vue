@@ -16,7 +16,6 @@
         </article>
         <article class="u-col-7@lg u-col-12@md u-padding-col">
           <div class="c-fixture">
-            <h2 class="c-fixture__round">Fixture - Round <span class="js-fixture-round"></span></h2>
             <div class="js-fixture">
               <Fixture :fixtureData="fixtureData" :clubData="clubData" :roundNumber="roundNumber" :roundName="roundName" />
             </div>
@@ -46,7 +45,6 @@ export default {
   mounted() {
     axios.get('./data/clubs.json')
       .then(response => {
-        console.log(response)
         this.clubData = response.data;
       })
     axios.get('./data/dummy_data.json')
@@ -61,9 +59,25 @@ export default {
 // https://statsapi.foxsports.com.au/3.0/api/scoreboard/profiles/foxsports_afl.json;masthead=foxsports?userkey=A00239D3-45F6-4A0A-810C-54A347F144C2
     axios.get('./data/data-fixture.json')
       .then(response => {
+        console.log(response.data[0].series_scoreboards[0].scoreboards)
         this.fixtureData = response.data[0].series_scoreboards[0].scoreboards;
       })
   }
 }
 </script>
+<style scoped lang="scss">
+  .o-section__title {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    padding: 25px 0 12.5px;
+  }
+  .c-ladder__container {
+    @include flex-size($width-5);
+
+    @media screen and (max-width: $break-m) {
+      @include flex-size($width-12)
+    }
+  }
+</style>
 

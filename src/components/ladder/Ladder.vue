@@ -31,3 +31,10 @@ export default {
   }
 }
 </script>
+<style scoped lang="scss">
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 9.5px;
+  }
+</style>
