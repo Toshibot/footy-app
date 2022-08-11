@@ -1,234 +1,234 @@
 {
     "ADE": {
         "name": "Adelaide",
-        "logo": "img/teams/crows.png",
-        "pattern": "img/teams/crows.svg",
+        "logo": "img/teams/ADE.png",
+        "pattern": "img/teams/ADE.svg",
         "kit": {
-            "home": "img/teams/crows-home.png",
-            "away": "img/teams/crows-away.png",
+            "home": "img/teams/ADE-home.png",
+            "away": "img/teams/ADE-away.png",
             "clash": {
-                "kit": "img/teams/crows-home.png",
+                "kit": "img/teams/ADE-home.png",
                 "teams": ["HAW"]
             }
         }
     },
     "BRI": {
         "name": "Brisbane",
-        "logo": "img/teams/lions.png",
-        "pattern": "img/teams/lions.svg",
+        "logo": "img/teams/BRI.png",
+        "pattern": "img/teams/BRI.svg",
         "kit": {
-            "home": "img/teams/lions-home.png",
-            "away": "img/teams/lions-away.png",
+            "home": "img/teams/BRI-home.png",
+            "away": "img/teams/BRI-away.png",
             "clash": {
-                "kit": "img/teams/lions-clash.png",
+                "kit": "img/teams/BRI-clash.png",
                 "teams": ["SYD","GWS","GCS","WCE","ADE","FRE","POR", "MEL"]
             }
         }
     },
     "CAR": {
         "name": "Carlton",
-        "logo": "img/teams/blues.png",
-        "pattern": "img/teams/blues.svg",
+        "logo": "img/teams/CAR.png",
+        "pattern": "img/teams/CAR.svg",
         "kit": {
-            "home": "img/teams/blues-home.png",
-            "away": "img/teams/blues-clash.png",
+            "home": "img/teams/CAR-home.png",
+            "away": "img/teams/CAR-clash.png",
             "clash": {
-                "kit": "img/teams/blues-home.png",
+                "kit": "img/teams/CAR-home.png",
                 "teams": ["GEE", "SYD"]
             }
         }
     },
     "COL": {
         "name": "Collingwood",
-        "logo": "img/teams/magpies.png",
-        "pattern": "img/teams/magpies.svg",
+        "logo": "img/teams/COL.png",
+        "pattern": "img/teams/COL.svg",
         "kit": {
-            "home": "img/teams/magpies-home.png",
-            "away": "img/teams/magpies-clash.png",
+            "home": "img/teams/COL-home.png",
+            "away": "img/teams/COL-clash.png",
             "clash": {
-                "kit": "img/teams/magpies-home.png",
+                "kit": "img/teams/COL-home.png",
                 "teams": ["SYD", "GEE"]
             }
         }
     },
     "ESS": {
         "name": "Essendon",
-        "logo": "img/teams/bombers.png",
-        "pattern": "img/teams/bombers.svg",
+        "logo": "img/teams/ESS.png",
+        "pattern": "img/teams/ESS.svg",
         "kit": {
-            "home": "img/teams/bombers-home.png",
-            "away": "img/teams/bombers-home.png",
+            "home": "img/teams/ESS-home.png",
+            "away": "img/teams/ESS-home.png",
             "clash": {
-                "kit": "img/teams/bombers-clash.png",
+                "kit": "img/teams/ESS-clash.png",
                 "teams": ["MEL", "COL", "CAR", "POR", "STK", "RIC"]
             }
         }
     },
     "FRE": {
         "name": "Fremantle",
-        "logo": "img/teams/dockers.png",
-        "pattern": "img/teams/dockers.svg",
+        "logo": "img/teams/FRE.png",
+        "pattern": "img/teams/FRE.svg",
         "kit": {
-            "home": "img/teams/dockers-home.png",
-            "away": "img/teams/dockers-away.png",
+            "home": "img/teams/FRE-home.png",
+            "away": "img/teams/FRE-away.png",
             "clash": {
-                "kit": "img/teams/dockers-home.png",
+                "kit": "img/teams/FRE-home.png",
                 "teams": ["SYD", "GEE"]
             }
         }
     },
     "GEE": {
         "name": "Geelong",
-        "logo": "img/teams/cats.png",
-        "pattern": "img/teams/cats.svg",
+        "logo": "img/teams/GEE.png",
+        "pattern": "img/teams/GEE.svg",
         "kit": {
-            "home": "img/teams/cats-home.png",
-            "away": "img/teams/cats-home.png",
+            "home": "img/teams/GEE-home.png",
+            "away": "img/teams/GEE-home.png",
             "clash": {
-                "kit": "img/teams/cats-clash.png",
+                "kit": "img/teams/GEE-clash.png",
                 "teams": []
             }
         }
     },
     "GCS": {
         "name": "Gold Coast",
-        "logo": "img/teams/suns.png",
-        "pattern": "img/teams/suns.svg",
+        "logo": "img/teams/GCS.png",
+        "pattern": "img/teams/GCS.svg",
         "kit": {
-            "home": "img/teams/suns-home.png",
-            "away": "img/teams/suns-away.png",
+            "home": "img/teams/GCS-home.png",
+            "away": "img/teams/GCS-away.png",
             "clash": {
-                "kit": "img/teams/suns-home.png",
+                "kit": "img/teams/GCS-home.png",
                 "teams": ["WBD", "CAR", "FRE", "NM", "WCE"]
             }
         }
     },
     "GWS": {
         "name": "Gr. W. Sydney",
-        "logo": "img/teams/gws.png",
-        "pattern": "img/teams/gws.svg",
+        "logo": "img/teams/GWS.png",
+        "pattern": "img/teams/GWS.svg",
         "kit": {
-            "home": "img/teams/gws-home.png",
-            "away": "img/teams/gws-away.png",
+            "home": "img/teams/GWS-home.png",
+            "away": "img/teams/GWS-away.png",
             "clash": {
-                "kit": "img/teams/gws-home.png",
+                "kit": "img/teams/GWS-home.png",
                 "teams": ["SYD", "GEE"]
             }
         }
     },
     "HAW": {
         "name": "Hawthorn",
-        "logo": "img/teams/hawks.png",
-        "pattern": "img/teams/hawks.svg",
+        "logo": "img/teams/HAW.png",
+        "pattern": "img/teams/HAW.svg",
         "kit": {
-            "home": "img/teams/hawks-home.png",
-            "away": "img/teams/hawks-away.png",
+            "home": "img/teams/HAW-home.png",
+            "away": "img/teams/HAW-away.png",
             "clash": {
-                "kit": "img/teams/hawks-home.png",
+                "kit": "img/teams/HAW-home.png",
                 "teams": []
             }
         }
     },
     "MEL": {
         "name": "Melbourne",
-        "logo": "img/teams/demons.png",
-        "pattern": "img/teams/demons.svg",
+        "logo": "img/teams/MEL.png",
+        "pattern": "img/teams/MEL.svg",
         "kit": {
-            "home": "img/teams/demons-home.png",
-            "away": "img/teams/demons-clash.png",
+            "home": "img/teams/MEL-home.png",
+            "away": "img/teams/MEL-clash.png",
             "clash": {
-                "kit": "img/teams/demons-home.png",
+                "kit": "img/teams/MEL-home.png",
                 "teams": []
             }
         }
     },
     "NM": {
         "name": "N. Melbourne",
-        "logo": "img/teams/kangaroos.png",
-        "pattern": "img/teams/kangaroos.svg",
+        "logo": "img/teams/NM.png",
+        "pattern": "img/teams/NM.svg",
         "kit": {
-            "home": "img/teams/kangaroos-home.png",
-            "away": "img/teams/kangaroos-clash.png",
+            "home": "img/teams/NM-home.png",
+            "away": "img/teams/NM-clash.png",
             "clash": {
-                "kit": "img/teams/kangaroos-home.png",
+                "kit": "img/teams/NM-home.png",
                 "teams": ["COL"]
             }
         }
     },
     "POR": {
         "name": "Port Adelaide",
-        "logo": "img/teams/port.png",
-        "pattern": "img/teams/port.svg",
+        "logo": "img/teams/POR.png",
+        "pattern": "img/teams/POR.svg",
         "kit": {
-            "home": "img/teams/port-home.png",
-            "away": "img/teams/port-clash.png",
+            "home": "img/teams/POR-home.png",
+            "away": "img/teams/POR-clash.png",
             "clash": {
-                "kit": "img/teams/port-home.png",
+                "kit": "img/teams/POR-home.png",
                 "teams": ["SYD", "GEE"]
             }
         }
     },
     "RIC": {
         "name": "Richmond",
-        "logo": "img/teams/tigers.png",
-        "pattern": "img/teams/tigers.svg",
+        "logo": "img/teams/RIC.png",
+        "pattern": "img/teams/RIC.svg",
         "kit": {
-            "home": "img/teams/tigers-home.png",
-            "away": "img/teams/tigers-away.png",
+            "home": "img/teams/RIC-home.png",
+            "away": "img/teams/RIC-away.png",
             "clash": {
-                "kit": "img/teams/tigers-home.png",
+                "kit": "img/teams/RIC-home.png",
                 "teams": ["HAW"]
             }
         }
     },
     "STK": {
         "name": "St. Kilda",
-        "logo": "img/teams/saints.png",
-        "pattern": "img/teams/saints.svg",
+        "logo": "img/teams/STK.png",
+        "pattern": "img/teams/STK.svg",
         "kit": {
-            "home": "img/teams/saints-home.png",
-            "away": "img/teams/saints-away.png",
+            "home": "img/teams/STK-home.png",
+            "away": "img/teams/STK-away.png",
             "clash": {
-                "kit": "img/teams/saints-home.png",
+                "kit": "img/teams/STK-home.png",
                 "teams": ["SYD", "GEE"]
             }
         }
     },
     "SYD": {
         "name": "Sydney",
-        "logo": "img/teams/swans.png",
-        "pattern": "img/teams/swans.svg",
+        "logo": "img/teams/SYD.png",
+        "pattern": "img/teams/SYD.svg",
         "kit": {
-            "home": "img/teams/swans-home.png",
-            "away": "img/teams/swans-home.png",
+            "home": "img/teams/SYD-home.png",
+            "away": "img/teams/SYD-home.png",
             "clash": {
-                "kit": "img/teams/swans-home.png",
-                "teams": []
+                "kit": "img/teams/SYD-home.png",
+                "teams": [""]
             }
         }
     },
     "WBD": {
         "name": "W. Bulldogs",
-        "logo": "img/teams/dogs.png",
-        "pattern": "img/teams/dogs.svg",
+        "logo": "img/teams/WBD.png",
+        "pattern": "img/teams/WBD.svg",
         "kit": {
-            "home": "img/teams/dogs-home.png",
-            "away": "img/teams/dogs-away.png",
+            "home": "img/teams/WBD-home.png",
+            "away": "img/teams/WBD-away.png",
             "clash": {
-                "kit": "img/teams/dogs-home.png",
+                "kit": "img/teams/WBD-home.png",
                 "teams": ["SYD","GEE"]
             }
         }
     },
     "WCE": {
         "name": "West Coast",
-        "logo": "img/teams/eagles.png",
-        "pattern": "img/teams/eagles.svg",
+        "logo": "img/teams/WCE.png",
+        "pattern": "img/teams/WCE.svg",
         "kit": {
-            "home": "img/teams/eagles-home.png",
-            "away": "img/teams/eagles-away.png",
+            "home": "img/teams/WCE-home.png",
+            "away": "img/teams/WCE-away.png",
             "clash": {
-                "kit": "img/teams/eagles-home.png",
+                "kit": "img/teams/WCE-home.png",
                 "teams": ["HAW"]
             }
         }

@@ -1,13 +1,11 @@
 <template>
-  <div class="ladder-item">
+  <div :class="'ladder-item ladder-item-' + position">
     <div class="ladder-item-position">
       {{position}}
     </div>
-    <div class="ladder-item-clubicon">
+    <div class="ladder-item-club">
       <img :src="clubicon">
-    </div>
-    <div class="ladder-item-clubname">
-      {{clubname}}
+      <span>{{clubname}}</span>
     </div>
     <div class="ladder-item-played">
       {{played}}
@@ -31,19 +29,76 @@
 </template>
 <style scoped lang="scss">
   .ladder-item {
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    margin: 3px auto;
+    position: relative;
+    text-align: left;
     color: $color-white;
+    background: $color-grey-dark;
 
     div {
       display: inline-block;
+      height: 41px;
+      line-height: 41px;
+
+      &:nth-child(even) {
+        background: rgba(0,0,0,0.05);
+      }
     }
 
-    &-clubicon {
+    &-club {
+      flex-basis: 33.333%;
+      max-width: 33.333%;
+      text-align: left;
+
       img {
         width: 41px;
         height: 41px;
         margin-bottom: -2px;
         background: $color-grey;
+        @include boxShadow(2, $color-black);
       }
+
+      span {
+        padding-left: 12.5px;
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+
+    &-position,
+    &-played,
+    &-wins,
+    &-losses,
+    &-draws,
+    &-points {
+      flex-basis: 8.333%;
+      max-width: 8.333%;
+      text-align: center;
+    }
+
+    &-percentage {
+      flex-basis: 16.667%;
+      max-width: 16.667%;
+      text-align: center;
+    }
+
+    &-1,
+    &-2,
+    &-3,
+    &-4 {
+      color: $color-black;
+      background: $color-white;
+    }
+
+    &-5,
+    &-6,
+    &-7,
+    &-8 {
+      color: $color-black;
+      background: $color-offwhite;
     }
   }
 </style>

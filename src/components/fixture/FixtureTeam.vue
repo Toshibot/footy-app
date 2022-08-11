@@ -1,9 +1,9 @@
 <template>
   <div class="fixture-team">
-    <IconKit :source="kitsource" :size="161" />
+    <IconKit :source="kitsource" :size="161" class="icon-kit" />
     <span class="fixture-team-name">{{teamname}}</span>
     <span class="fixture-team-score">
-      {{goals}}.{{behinds}}<span class="fixture-team-score-total">{{totalscore}}</span>
+      {{goals}}.{{behinds}}.<span class="fixture-team-score-total">{{totalscore}}</span>
     </span>
   </div>
 </template>
@@ -21,18 +21,24 @@ export default {
         required: true
       },
       goals: {
-        type: String,
+        type: Number,
         required: false
       },
       behinds: {
-        type: String,
+        type: Number,
         required: false
       },
       totalscore: {
-        type: String,
+        type: Number,
         required: false
       }
     },
     components: { IconKit }
 }
 </script>
+<style scoped lang="scss">
+  .icon-kit {
+    width: 80px;
+    height: 80px;
+  }
+</style>

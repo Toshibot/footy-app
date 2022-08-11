@@ -1,9 +1,10 @@
 <template>
+  <h2>Ladder</h2>
   <LadderHeader />
-  <div v-for="ladderitem in ladderData" :key="ladderData.id">
+  <div v-for="ladderitem in ladderData" :key="ladderitem.id">
     <LadderItem 
       :position="ladderitem.stats.position"
-      clubicon="./img/teams/blues.png"
+      :clubicon="'./img/teams/' + ladderitem.code + '.png'"
       :clubname="ladderitem.short_name"
       :played="ladderitem.stats.played"
       :wins="ladderitem.stats.won"
@@ -15,7 +16,6 @@
   </div>
 </template>
 <script lang="ts">
-import axios from 'axios';
 import LadderHeader from './LadderHeader.vue';
 import LadderItem from './LadderItem.vue';
 
@@ -24,22 +24,10 @@ export default {
     LadderHeader,
     LadderItem
   },
-  data() {
-    return {
-      ladderData: [],
-      roundData: ''
+  props: {
+    ladderData: {
+      type: Object
     }
-  },
-  mounted() {
-    axios.get('./data/dummy_data.json')
-      .then(response => {
-        console.log(response);
-        this.ladderData = response.data.teams;
-        this.roundData = response.data.round.name;
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
   }
 }
 </script>
