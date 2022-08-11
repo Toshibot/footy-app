@@ -47,7 +47,7 @@ export default {
       .then(response => {
         this.clubData = response.data;
       })
-    axios.get('./data/dummy_data.json')
+    axios.get('https://statsapi.foxsports.com.au/3.0/api/sports/afl/series/1/seasons/126/ladder.json?userkey=6B2F4717-A97C-49F6-8514-3600633439B9')
       .then(response => {
         this.ladderData = response.data.teams;
         this.roundName = response.data.round.name;
@@ -56,8 +56,7 @@ export default {
       .catch(function (error) {
         console.log(error)
       })
-// https://statsapi.foxsports.com.au/3.0/api/scoreboard/profiles/foxsports_afl.json;masthead=foxsports?userkey=A00239D3-45F6-4A0A-810C-54A347F144C2
-    axios.get('./data/data-fixture.json')
+    axios.get('https://statsapi.foxsports.com.au/3.0/api/scoreboard/profiles/foxsports_afl.json;masthead=foxsports?userkey=A00239D3-45F6-4A0A-810C-54A347F144C2')
       .then(response => {
         console.log(response.data[0].series_scoreboards[0].scoreboards)
         this.fixtureData = response.data[0].series_scoreboards[0].scoreboards;
