@@ -1,5 +1,5 @@
 <template>
-  <h2>Fixture - Round {{roundNumber}}</h2>
+  <h2>Fixture - Round {{getCurrentRound(roundData)}}</h2>
   <span class="fixture-item-container" v-for="fixtureItem in fixtureData" :key="fixtureItem.id">
     <FixtureItem 
       :clubData="clubData"
