@@ -11,13 +11,13 @@
         <h1 class="o-section__title">Season 2022</h1>
         <article class="c-ladder__container u-col-5@lg u-col-12@md u-padding-col">
           <div class="js-ladder">
-              <Ladder :ladderData="ladderData" />
+              <Ladder :ladderData="ladderData" :clubData="clubData" />
           </div>
         </article>
         <article class="u-col-7@lg u-col-12@md u-padding-col">
           <div class="c-fixture">
             <div class="js-fixture">
-              <Fixture :fixtureData="fixtureData" :clubData="clubData" :roundNumber="roundNumber" :roundName="roundName" />
+              <Fixture :fixtureData="fixtureData" :clubData="clubData" :roundData="roundData" :roundNumber="roundNumber" :roundName="roundName" />
             </div>
           </div>
         </article>
@@ -36,6 +36,7 @@ export default {
   data() {
     return {
       ladderData: [],
+      roundData: [],
       roundName: '',
       roundNumber: 0,
       fixtureData: [],
@@ -47,24 +48,34 @@ export default {
       .then(response => {
         this.clubData = response.data;
       })
+    axios.get('./data/fixture.json')
+      .then(response => {
+        this.roundData = response.data;
+      })
+      // Ladder Data
+    // axios.get('./data/dummy_data.json')
     axios.get('https://statsapi.foxsports.com.au/3.0/api/sports/afl/series/1/seasons/126/ladder.json?userkey=6B2F4717-A97C-49F6-8514-3600633439B9')
       .then(response => {
         this.ladderData = response.data.teams;
         this.roundName = response.data.round.name;
-        this.roundNumber = response.data.round.number;
+        this.roundNumber = response.data.round.number +1;
       })
       .catch(function (error) {
         console.log(error)
       })
-    axios.get('https://statsapi.foxsports.com.au/3.0/api/scoreboard/profiles/foxsports_afl.json;masthead=foxsports?userkey=A00239D3-45F6-4A0A-810C-54A347F144C2')
+      // Fixture Data
+    // axios.get('./data/data-fixture.json')
+    axios.get('https://statsapi.foxsports.com.au/3.0/api/sports/afl/series/1/seasons/126/fixturesandresults.json?userkey=6B2F4717-A97C-49F6-8514-3600633439B9')
       .then(response => {
-        console.log(response.data[0].series_scoreboards[0].scoreboards)
-        this.fixtureData = response.data[0].series_scoreboards[0].scoreboards;
+        this.fixtureData = response.data;
       })
   }
 }
 </script>
 <style scoped lang="scss">
+  .hidden {
+    display: none;
+  }
   .o-section__title {
     width: 100%;
     text-align: center;
@@ -77,6 +88,9 @@ export default {
     @media screen and (max-width: $break-m) {
       @include flex-size($width-12)
     }
+  }
+  .c-fixture {
+    text-align: center;
   }
 </style>
 

@@ -1,15 +1,17 @@
 <template>
   <h2>Fixture - Round {{roundNumber}}</h2>
-  <div class="fixture-item-container" v-for="fixtureItem in fixtureData" :key="fixtureItem.id">
+  <span class="fixture-item-container" v-for="fixtureItem in fixtureData" :key="fixtureItem.id">
     <FixtureItem 
       :clubData="clubData"
-      :timestamp="fixtureItem.score.match_start_date"
-      :venue="fixtureItem.score.venue.name"
-      :gameStatus="fixtureItem.score.match_status_normalised"
-      :teamHome="fixtureItem.score.team_A"
-      :teamAway="fixtureItem.score.team_B"
+      :fixtureRoundNumber="fixtureItem.round.number"
+      :roundNumber="getCurrentRound(roundData)"
+      :timestamp="fixtureItem.match_start_date"
+      :venue="fixtureItem.venue.name"
+      :gameStatus="fixtureItem.match_status_normalised"
+      :teamHome="fixtureItem.team_A"
+      :teamAway="fixtureItem.team_B"
     />
-  </div>
+  </span>
   
 </template>
 <script lang="ts">
@@ -26,6 +28,9 @@ export default {
     clubData: {
       type: Object
     },
+    roundData: {
+      type: Object
+    },
     roundName: {
       type: String
     },
@@ -35,7 +40,22 @@ export default {
   },
   data() {
     return {
-      currentFixture: {}
+      currentFixture: []
+    }
+  },
+  methods: {
+    getCurrentRound(roundData:any){
+      let target_date = new Date();
+
+      for (let i = 0; i < roundData.length; i++) {
+          let round = roundData[i];
+          let round_start = new Date(round.start);
+          let round_end = new Date(round.end);
+
+          if (round_start < target_date && target_date < round_end ) {
+              return round.round;
+          } 
+      }
     }
   }
 }
@@ -51,18 +71,6 @@ export default {
     }
   }
   .fixture-item-container {
-    margin-bottom: 17px;
-
-    @media screen and (min-width: $break-m) {
-      display: inline-block;
-      width: 32%;
-      margin-right: 1.5%;
-
-      &:nth-child(4),
-      &:nth-child(7),
-      &:nth-child(10) {
-        margin-right: 0;
-      }
-    }
+    width: auto;
   }
 </style>

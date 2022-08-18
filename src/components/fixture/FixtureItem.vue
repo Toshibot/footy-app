@@ -1,10 +1,11 @@
 <template>
-  <div class="fixture-item" :class="[{live: gameStatus === 'live', post: gameStatus === 'post'}]">
+  <div class="fixture-item" :class="[{current: fixtureRoundNumber === roundNumber, live: gameStatus === 'live', post: gameStatus === 'post'}]">
     <div class="fixture-date">
       <span class="fixture-date-day">{{gameTime(timestamp).day}}</span>
       <span class="fixture-date-month">{{gameTime(timestamp).month}}</span>
       <span class="fixture-date-date">{{gameTime(timestamp).date}}</span>
       <span v-if="gameStatus === 'pre'" class="fixture-date-time">{{gameTime(timestamp).time}}</span>
+      <span v-else-if="gameStatus === 'post'" class="fixture-date-time">FT</span>
     </div>
     <FixtureTeam 
       :kitsource="homeTeamKit(clubData, teamHome.code)"
@@ -36,6 +37,12 @@ export default {
       },
       gameStatus: {
         type: String
+      },
+      fixtureRoundNumber: {
+        type: Number
+      },
+      roundNumber: {
+        type: Number
       },
       timestamp: {
         type: String
@@ -121,6 +128,7 @@ export default {
 </script>
 <style scoped lang="scss">
   .fixture-item {
+    display: none;
     @include borderBox();
     background: $color-grey-dark;
     color: $color-white;
@@ -132,7 +140,13 @@ export default {
     }
 
     &.post {
-      background: $color-black;
+      background: #444;
+    }
+    &.current {
+      display: inline-block;
+      margin: 0 17px 17px 0;
+      padding: 0 17px;
+      width: 330px;
     }
   }
 

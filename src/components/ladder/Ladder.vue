@@ -4,8 +4,8 @@
   <div v-for="ladderitem in ladderData" :key="ladderitem.id">
     <LadderItem 
       :position="ladderitem.stats.position"
-      :clubicon="'./img/teams/' + ladderitem.code + '.png'"
-      :clubname="ladderitem.short_name"
+      :clubicon="clubData[ladderitem.code].logo"
+      :clubname="clubData[ladderitem.code].name"
       :played="ladderitem.stats.played"
       :wins="ladderitem.stats.won"
       :losses="ladderitem.stats.lost"
@@ -26,6 +26,9 @@ export default {
   },
   props: {
     ladderData: {
+      type: Object
+    },
+    clubData: {
       type: Object
     }
   }
