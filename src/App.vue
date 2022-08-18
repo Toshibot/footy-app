@@ -14,7 +14,7 @@
               <Ladder :ladderData="ladderData" :clubData="clubData" />
           </div>
         </article>
-        <article class="u-col-7@lg u-col-12@md u-padding-col">
+        <article class="u-col-7@lg u-col-12@md u-padding-col@md">
           <div class="c-fixture">
             <div class="js-fixture">
               <Fixture :fixtureData="fixtureData" :clubData="clubData" :roundData="roundData" :roundNumber="roundNumber" :roundName="roundName" />

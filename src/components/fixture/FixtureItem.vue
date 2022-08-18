@@ -146,7 +146,7 @@ export default {
       display: inline-block;
       margin: 0 17px 17px 0;
       padding: 0 17px;
-      width: 330px;
+      width: 350px;
     }
   }
 
