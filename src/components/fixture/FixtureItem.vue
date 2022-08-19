@@ -147,6 +147,11 @@ export default {
       margin: 0 17px 17px 0;
       padding: 0 17px;
       width: 350px;
+
+      @media screen and (max-width: $break-m) {
+        width: 100%;
+        margin: 0 0 17px;
+      }
     }
   }
 

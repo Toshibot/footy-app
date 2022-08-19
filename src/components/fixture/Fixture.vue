@@ -43,11 +43,18 @@ export default {
     text-align: center;
     padding-bottom: 12.5px;
 
-    @media screen and (max-width: $break-s) {
+    @media screen and (max-width: $break-m) {
       margin-top: 25px;
     }
   }
   .fixture-item-container {
     width: auto;
+
+    @media screen and (max-width: $break-m) {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      padding: 0 12.5px;
+    }
   }
 </style>
