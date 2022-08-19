@@ -35,7 +35,7 @@
     position: relative;
     text-align: left;
     color: $color-white;
-    background: $color-black;
+    background: $color-black-dark;
 
     div {
       display: inline-block;

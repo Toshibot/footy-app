@@ -1,10 +1,10 @@
 <template>
-  <h2>Fixture - Round {{getCurrentRound(roundData)}}</h2>
+  <h2>Fixture - Round {{roundNumber}}</h2>
   <span class="fixture-item-container" v-for="fixtureItem in fixtureData" :key="fixtureItem.id">
     <FixtureItem 
       :clubData="clubData"
       :fixtureRoundNumber="fixtureItem.round.number"
-      :roundNumber="getCurrentRound(roundData)"
+      :roundNumber="roundNumber"
       :timestamp="fixtureItem.match_start_date"
       :venue="fixtureItem.venue.name"
       :gameStatus="fixtureItem.match_status_normalised"
@@ -28,34 +28,11 @@ export default {
     clubData: {
       type: Object
     },
-    roundData: {
-      type: Object
-    },
     roundName: {
       type: String
     },
     roundNumber: {
       type: Number
-    }
-  },
-  data() {
-    return {
-      currentFixture: []
-    }
-  },
-  methods: {
-    getCurrentRound(roundData:any){
-      let target_date = new Date();
-
-      for (let i = 0; i < roundData.length; i++) {
-          let round = roundData[i];
-          let round_start = new Date(round.start);
-          let round_end = new Date(round.end);
-
-          if (round_start < target_date && target_date < round_end ) {
-              return round.round;
-          } 
-      }
     }
   }
 }

@@ -7,7 +7,7 @@
 <template>
   <body id="Body" class="t-dark">
     <main class="o-main u-vert-center">
-      <section class="o-section u-flex">
+      <section v-if="getCurrentRound(roundData) < 24" class="o-section u-flex">
         <h1 class="o-section__title">Season 2022</h1>
         <article class="c-ladder__container u-col-5@lg u-col-12@md u-padding-col">
           <div class="js-ladder">
@@ -17,10 +17,13 @@
         <article class="u-col-7@lg u-col-12@md u-padding-col@md">
           <div class="c-fixture">
             <div class="js-fixture">
-              <Fixture :fixtureData="fixtureData" :clubData="clubData" :roundData="roundData" :roundNumber="roundNumber" :roundName="roundName" />
+              <Fixture :fixtureData="fixtureData" :clubData="clubData" :roundNumber="getCurrentRound(roundData)" :roundName="roundName" />
             </div>
           </div>
         </article>
+      </section>
+      <section v-else class="o-section u-flex">
+        <h1 class="o-section__title">Finals 2022</h1>
       </section>
     </main>
   </body>
@@ -44,31 +47,47 @@ export default {
     }
   },
   mounted() {
+    // Club Data - Hosted
     axios.get('./data/clubs.json')
       .then(response => {
         this.clubData = response.data;
       })
+    // Fixture Dates - Hosted
     axios.get('./data/fixture.json')
       .then(response => {
         this.roundData = response.data;
       })
-      // Ladder Data
-    // axios.get('./data/dummy_data.json')
+    // Ladder Data - Remote
+    // axios.get('./data/dummy_data.json') // Test Data
     axios.get('https://statsapi.foxsports.com.au/3.0/api/sports/afl/series/1/seasons/126/ladder.json?userkey=6B2F4717-A97C-49F6-8514-3600633439B9')
       .then(response => {
         this.ladderData = response.data.teams;
         this.roundName = response.data.round.name;
-        this.roundNumber = response.data.round.number +1;
       })
       .catch(function (error) {
         console.log(error)
       })
-      // Fixture Data
-    // axios.get('./data/data-fixture.json')
+    // Fixture Data - Remote
+    // axios.get('./data/data-fixture.json') // Test Data
     axios.get('https://statsapi.foxsports.com.au/3.0/api/sports/afl/series/1/seasons/126/fixturesandresults.json?userkey=6B2F4717-A97C-49F6-8514-3600633439B9')
       .then(response => {
         this.fixtureData = response.data;
       })
+  },
+  methods: {
+    getCurrentRound(roundData:any){
+      let target_date = new Date();
+
+      for (let i = 0; i < roundData.length; i++) {
+          let round = roundData[i];
+          let round_start = new Date(round.start);
+          let round_end = new Date(round.end);
+
+          if (round_start < target_date && target_date < round_end ) {
+              return round.round;
+          } 
+      }
+    }
   }
 }
 </script>
@@ -80,7 +99,9 @@ export default {
     width: 100%;
     text-align: center;
     font-size: 24px;
-    padding: 25px 0 12.5px;
+    padding: 12.5px 0;
+    margin-bottom: 12.5px;
+    background: $color-black-dark;
   }
   .c-ladder__container {
     @include flex-size($width-5);
