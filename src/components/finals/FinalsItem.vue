@@ -1,7 +1,7 @@
 <template>
   <div class="fixture-item" :class="[{current: fixtureRoundNumber === roundNumber, live: gameStatus === 'live', post: gameStatus === 'post'}]">
     <div class="fixture-date">
-      <span v-if="gameStatus === 'pre' || gameStatus === 'post'">
+      <span>
         <span class="fixture-date-day">{{gameTime(timestamp).day}}</span>
         <span class="fixture-date-month">{{gameTime(timestamp).month}}</span>
         <span class="fixture-date-date">{{gameTime(timestamp).date}}</span>
@@ -34,7 +34,7 @@
   </div>
 </template>
 <script lang="ts">
-import FixtureTeam from './FixtureTeam.vue'
+import FixtureTeam from '../fixture/FixtureTeam.vue'
 
 export default {
     props: {

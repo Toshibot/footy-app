@@ -8,6 +8,8 @@
       :timestamp="fixtureItem.match_start_date"
       :venue="fixtureItem.venue.name"
       :gameStatus="fixtureItem.match_status_normalised"
+      :matchStatus="fixtureItem.match_status"
+      :matchTime="fixtureItem.match_time"
       :teamHome="fixtureItem.team_A"
       :teamAway="fixtureItem.team_B"
     />
