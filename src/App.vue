@@ -10,7 +10,7 @@
   <body id="Body" class="t-dark">
     <main class="o-main u-vert-center">
       <section v-if="getCurrentRound(roundData) < 24" class="o-section u-flex">
-        <h1 class="o-section__title">Season 2022</h1>
+        <h1 class="o-section__title">Season 2023</h1>
         <article class="c-ladder__container u-col-5@lg u-col-12@md u-padding-col">
           <div class="js-ladder">
               <Ladder :ladderData="ladderData" :clubData="clubData" />
@@ -24,12 +24,12 @@
           </div>
         </article>
       </section>
-      <section v-else class="o-section u-flex">
+      <!-- <section v-else class="o-section u-flex">
         <h1 class="o-section__title">Finals 2022</h1>
         <div class="c-finals">
           <Finals :fixtureData="fixtureData" :clubData="clubData" :roundNumber="getCurrentRound(roundData)" />
         </div>
-      </section>
+      </section> -->
     </main>
   </body>
 </template>
@@ -69,8 +69,8 @@ export default {
         this.roundData = response.data;
       })
     // Fixture Data - Remote
-    axios.get('./data/data-fixture.json') // Test Data
-    // axios.get('https://statsapi.foxsports.com.au/3.0/api/sports/afl/series/1/seasons/126/fixturesandresults.json?userkey=6B2F4717-A97C-49F6-8514-3600633439B9')
+    // axios.get('./data/data-fixture.json') // Test Data
+    axios.get('https://statsapi.foxsports.com.au/3.0/api/sports/afl/series/1/seasons/128/fixturesandresults.json?userkey=6B2F4717-A97C-49F6-8514-3600633439B9')
       .then(response => {
         console.log(response.data);
         this.fixtureData = response.data;
@@ -79,8 +79,8 @@ export default {
         console.log(error)
       })
     // Ladder Data - Remote
-    axios.get('./data/dummy_data.json') // Test Data
-    // axios.get('https://statsapi.foxsports.com.au/3.0/api/sports/afl/series/1/seasons/126/ladder.json?userkey=6B2F4717-A97C-49F6-8514-3600633439B9')
+    // axios.get('./data/dummy_data.json') // Test Data
+    axios.get('https://statsapi.foxsports.com.au/3.0/api/sports/afl/series/1/seasons/128/ladder.json?userkey=6B2F4717-A97C-49F6-8514-3600633439B9')
       .then(response => {
         this.ladderData = response.data.teams;
         this.roundName = response.data.round.name;
