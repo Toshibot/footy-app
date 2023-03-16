@@ -54,7 +54,7 @@ export default {
   .fixture-container {
     justify-content: space-between;
     flex-wrap: wrap;
-    column-gap: 17px;
+    column-gap: 18px;
 
     @media screen and (min-width: $break-m) {
       padding-right: $size-base;

@@ -157,7 +157,7 @@ export default {
     &.current {
       display: inline-block;
       padding: 0 17px;
-      margin-bottom: 17px;
+      margin-bottom: 18px;
       width: 100%;
 
       @media screen and (max-width: $break-m) {
