@@ -117,6 +117,9 @@ export default {
   .hidden {
     display: none;
   }
+  .o-section {
+    width: 100%;
+  }
   .o-section__title {
     width: 100%;
     text-align: center;
