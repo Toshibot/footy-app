@@ -156,9 +156,9 @@ export default {
     }
     &.current {
       display: inline-block;
-      margin: 0 17px 17px 0;
       padding: 0 17px;
-      width: 350px;
+      margin-bottom: 17px;
+      width: 100%;
 
       @media screen and (max-width: $break-m) {
         width: 100%;

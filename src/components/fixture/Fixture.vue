@@ -1,19 +1,21 @@
 <template>
   <h2>Fixture - Round {{roundNumber}}</h2>
-  <span class="fixture-item-container" v-for="fixtureItem in fixtureData" :key="fixtureItem.id">
-    <FixtureItem 
-      :clubData="clubData"
-      :fixtureRoundNumber="fixtureItem.round.number"
-      :roundNumber="roundNumber"
-      :timestamp="fixtureItem.match_start_date"
-      :venue="fixtureItem.venue.name"
-      :gameStatus="fixtureItem.match_status_normalised"
-      :matchStatus="fixtureItem.match_status"
-      :matchTime="fixtureItem.match_time"
-      :teamHome="fixtureItem.team_A"
-      :teamAway="fixtureItem.team_B"
-    />
-  </span>
+  <div class="fixture-container u-flex">
+    <span class="fixture-item-container" v-for="fixtureItem in fixtureData" :key="fixtureItem.id">
+      <FixtureItem 
+        :clubData="clubData"
+        :fixtureRoundNumber="fixtureItem.round.number"
+        :roundNumber="roundNumber"
+        :timestamp="fixtureItem.match_start_date"
+        :venue="fixtureItem.venue.name"
+        :gameStatus="fixtureItem.match_status_normalised"
+        :matchStatus="fixtureItem.match_status"
+        :matchTime="fixtureItem.match_time"
+        :teamHome="fixtureItem.team_A"
+        :teamAway="fixtureItem.team_B"
+      />
+    </span>
+  </div>
   
 </template>
 <script lang="ts">
@@ -49,13 +51,26 @@ export default {
       margin-top: 25px;
     }
   }
+  .fixture-container {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 17px;
+
+    @media screen and (min-width: $break-m) {
+      padding-right: $size-base;
+    }
+  }
   .fixture-item-container {
-    width: auto;
+    min-width: 300px;
+    flex: 1 1 auto;
 
     @media screen and (max-width: $break-m) {
       display: block;
       width: 100%;
       max-width: 100%;
+    }
+
+    @media screen and (max-width: $break-xs) {
       padding: 0 12.5px;
     }
   }
