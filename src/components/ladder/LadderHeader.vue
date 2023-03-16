@@ -4,7 +4,7 @@
       Pos
     </div>
     <div class="ladder-header-club">
-      Team
+      <span>Club</span>
     </div>
     <div class="ladder-header-played">
       P
@@ -65,7 +65,7 @@
       }
 
       span {
-        padding-left: 12.5px;
+        padding-left: 53.5px;
         display: inline-block;
         vertical-align: top;
       }

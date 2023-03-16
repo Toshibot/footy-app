@@ -124,6 +124,7 @@ export default {
     width: 100%;
     text-align: center;
     font-size: 24px;
+    font-weight: 700;
     padding: 12.5px 0;
     margin-bottom: 12.5px;
     background: $color-black-dark;
