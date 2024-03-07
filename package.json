@@ -13,7 +13,7 @@
     "deploy": "gh-pages -d docs"
   },
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.6.7",
     "vue": "^3.2.37",
     "vuex": "^4.0.2"
   },

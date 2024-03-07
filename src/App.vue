@@ -7,31 +7,23 @@
 </script>
 
 <template>
-  <body id="Body" class="t-dark">
-    <main class="o-main u-vert-center">
-      <section v-if="getCurrentRound(roundData) < 24" class="o-section u-flex">
-        <h1 class="o-section__title">Season 2023</h1>
-        <article class="c-ladder__container u-col-5@lg u-col-12@md u-padding-col">
-          <div class="js-ladder">
-              <Ladder :ladderData="ladderData" :clubData="clubData" />
-          </div>
-        </article>
-        <article class="u-col-7@lg u-col-12@md u-padding-col@md">
-          <div class="c-fixture">
-            <div class="js-fixture">
-              <Fixture :fixtureData="fixtureData" :clubData="clubData" :roundNumber="getCurrentRound(roundData)" :roundName="roundName" />
-            </div>
-          </div>
-        </article>
-      </section>
-      <!-- <section v-else class="o-section u-flex">
-        <h1 class="o-section__title">Finals 2022</h1>
-        <div class="c-finals">
-          <Finals :fixtureData="fixtureData" :clubData="clubData" :roundNumber="getCurrentRound(roundData)" />
+  <main class="o-main u-vert-center">
+    <section v-if="getCurrentRound(roundData) < 24" class="o-section u-flex">
+      <h1 class="o-section__title">Season 2023</h1>
+      <article class="c-ladder__container u-col-5@lg u-col-12@md u-padding-col">
+        <div class="js-ladder">
+          <Ladder :ladderData="ladderData" :clubData="clubData" />
         </div>
-      </section> -->
-    </main>
-  </body>
+      </article>
+      <article class="u-col-7@lg u-col-12@md u-padding-col@md">
+        <div class="c-fixture">
+          <div class="js-fixture">
+            <Fixture :fixtureData="fixtureData" :clubData="clubData" :roundNumber="getCurrentRound(roundData)" :roundName="roundName" />
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
 </template>
 
 <style scoped lang="scss">
@@ -70,7 +62,7 @@ export default {
       })
     // Fixture Data - Remote
     // axios.get('./data/data-fixture.json') // Test Data
-    axios.get('https://statsapi.foxsports.com.au/3.0/api/sports/afl/series/1/seasons/128/fixturesandresults.json?userkey=6B2F4717-A97C-49F6-8514-3600633439B9')
+    axios.get('https://statsapi.foxsports.com.au/3.0/api/sports/afl/series/1/seasons/129/fixturesandresults.json?userkey=6B2F4717-A97C-49F6-8514-3600633439B9')
       .then(response => {
         console.log(response.data);
         this.fixtureData = response.data;
@@ -80,7 +72,7 @@ export default {
       })
     // Ladder Data - Remote
     // axios.get('./data/dummy_data.json') // Test Data
-    axios.get('https://statsapi.foxsports.com.au/3.0/api/sports/afl/series/1/seasons/128/ladder.json?userkey=6B2F4717-A97C-49F6-8514-3600633439B9')
+    axios.get('https://statsapi.foxsports.com.au/3.0/api/sports/afl/series/1/seasons/129/ladder.json?userkey=6B2F4717-A97C-49F6-8514-3600633439B9')
       .then(response => {
         this.ladderData = response.data.teams;
         this.roundName = response.data.round.name;
