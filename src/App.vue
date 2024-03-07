@@ -9,7 +9,7 @@
 <template>
   <main class="o-main u-vert-center">
     <section v-if="getCurrentRound(roundData) < 24" class="o-section u-flex">
-      <h1 class="o-section__title">Season 2023</h1>
+      <h1 class="o-section__title">Season 2024</h1>
       <article class="c-ladder__container u-col-5@lg u-col-12@md u-padding-col">
         <div class="js-ladder">
           <Ladder :ladderData="ladderData" :clubData="clubData" />
