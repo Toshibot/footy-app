@@ -1,7 +1,7 @@
 <template>
   <h2>Fixture - Round {{roundNumber}}</h2>
   <div class="fixture-container u-flex">
-    <span class="fixture-item-container" v-for="fixtureItem in fixtureData" :key="fixtureItem.id">
+    <span class="fixture-item-container" v-for="fixtureItem in fixtureData" :key="fixtureItem.id" v-if="fixtureItem.">
       <FixtureItem 
         :clubData="clubData"
         :fixtureRoundNumber="fixtureItem.round.number"
