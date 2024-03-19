@@ -148,7 +148,7 @@
         "pattern": "img/teams/NM.svg",
         "kit": {
             "home": "img/teams/NM-home.png",
-            "away": "img/teams/NM-clash.png",
+            "away": "img/teams/NM-away.png",
             "clash": {
                 "kit": "img/teams/NM-home.png",
                 "teams": ["COL"]
