@@ -61,7 +61,7 @@ export default {
     }
   }
   .fixture-item-container {
-    min-width: 300px;
+    width: 300px;
     flex: 1 1 auto;
 
     @media screen and (max-width: $break-m) {

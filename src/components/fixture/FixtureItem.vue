@@ -196,7 +196,7 @@ export default {
   }
 
   .fixture-venue {
-    padding: 25px 0 30px;
+    padding: 20.5px 0 24px;
     font-size: 12px;
   }
 </style>
