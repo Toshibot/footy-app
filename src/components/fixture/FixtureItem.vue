@@ -105,6 +105,13 @@ export default {
         let dateValue = date.getDate();
         let hoursValue = date.getHours();
         let minutesValue = date.getMinutes();
+        let pad = function(value:any) {
+            if(value < 10) {
+                return '0' + value;
+            } else {
+                return value;
+            }
+        };
         let daysOfTheWeek = [
           "Sunday", 
           "Monday", 
@@ -132,7 +139,7 @@ export default {
           day: daysOfTheWeek[dayValue],
           month: monthsOfTheYear[monthValue],
           date: dateValue,
-          time: hoursValue + ':' + minutesValue
+          time: pad(hoursValue) + ':' + pad(minutesValue)
         }
       }
     }
